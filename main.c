@@ -6,8 +6,8 @@
 
 int main()
 {
-    char pass[10],password[10]="melieric";
-    int i=0,choix,user,No,caractere;
+    char pass[10],password[10] = "melieric";
+    int i = 0,choix,user,No,caractere;
     again:
     system("cls");
     printf("\n\n\t\t LOGIN :\n\n\t\t\t1. USER\n\n\t\t\t2. ADMINISTRATOR");
@@ -21,7 +21,7 @@ int main()
     }
     system ("cls");
 
-    if (user=='2')
+    if (user == '2')
     {
         printf("\n\n\t\tEntrez le mot de passe pour vous connecter:");
 
@@ -40,7 +40,7 @@ int main()
 
 
         printf("\nLOADING");
-        for(i=0;i<7;i++)
+        for( i = 0; i < 7; i++)
             {
                 attente(444444444);
                 printf(".");
@@ -95,13 +95,13 @@ int main()
                 back:
                 printf("\nEnter 1 pour reessayer et 0 pour exit:");
                 choix=getch();
-                if (choix=='1')
+                if (choix == '1')
                         {
                             system("cls");
                             main();
                         }
 
-                else if (choix=='0')
+                else if (choix == '0')
                         {
                         system("cls");
                         close();}
@@ -112,5 +112,5 @@ int main()
                         goto back;}
     }   
     
-        return 0;
+    return 0;
 }

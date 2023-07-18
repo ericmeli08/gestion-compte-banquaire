@@ -25,10 +25,11 @@ void new_acc()
     while(fscanf(file,"%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n",&add.acc_no,add.name,&add.dob.day,&add.dob.month,&add.dob.year,&add.age,add.address,add.citizenship,&add.phone,add.acc_type,&add.amt,&add.deposit.day,&add.deposit.month,&add.deposit.year)!=EOF)
     {
         if (check.acc_no==add.acc_no)
-            {printf("Numero de compte deja utilise !");
+        {
+            printf("Numero de compte deja utilise !");
             attente(1000000000);
-                goto newacc;
-            }
+            goto newacc;
+        }
     }
     add.acc_no=check.acc_no;
         
@@ -49,7 +50,7 @@ void new_acc()
     printf("\nType of account:\n\t#Saving\n\t#Current\n\t#Fixed1(for 1 year)\n\t#Fixed2(for 2 years)\n\t#Fixed3(for 3 years)\n\n\tEnter your choice:");
     scanf("%s",add.acc_type);
 
-        fprintf(file,"%d %s %d/%d/%d %d %s %s %.0lf %s %.0f %d/%d/%d\n",add.acc_no,add.name,add.dob.day,add.dob.month,add.dob.year,add.age,add.address,add.citizenship,add.phone,add.acc_type,add.amt,add.deposit.day,add.deposit.month,add.deposit.year);
+    fprintf(file,"%d %s %d/%d/%d %d %s %s %.0lf %s %.0f %d/%d/%d\n",add.acc_no,add.name,add.dob.day,add.dob.month,add.dob.year,add.age,add.address,add.citizenship,add.phone,add.acc_type,add.amt,add.deposit.day,add.deposit.month,add.deposit.year);
 
     fclose(file);
     printf("\nAccount created successfully!");
@@ -126,13 +127,13 @@ void edit(void)
                 printf("Changement effectuer!");
                 }
             else if(choice==2)
-                {
-                    printf("Entrez le nouveau numero de phone:");
+            {
+                printf("Entrez le nouveau numero de phone:");
                 scanf("%lf",&upd.phone);
                 fprintf(new,"%d %s %d/%d/%d %d %s %s %lf %s %f %d/%d/%d\n",add.acc_no,add.name,add.dob.day,add.dob.month,add.dob.year,add.age,add.address,add.citizenship,upd.phone,add.acc_type,add.amt,add.deposit.day,add.deposit.month,add.deposit.year);
                 system("cls");
                 printf("Entrez la nouvelle addresse");
-                }
+            }
 
         }
         else
@@ -144,7 +145,8 @@ void edit(void)
     rename("new.txt","clients.txt");
 
 if(test!=1)
-        {   system("cls");
+        {   
+            system("cls");
             printf("\nAUCUN COMPTE!!\a\a\a");
         }
             edit_invalid:

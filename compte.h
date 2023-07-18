@@ -8,7 +8,6 @@
 
 struct date{
     int day,month,year;
-
     };
 struct {
 
@@ -34,9 +33,5 @@ void edit(void);
 void transact(void);
 void erase(void);
 void see(void);
-
-
-
-
 
 #endif
